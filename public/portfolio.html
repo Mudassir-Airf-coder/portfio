@@ -1,0 +1,1091 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Mudassir Arif | Agentic AI Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&family=Anybody:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-bright": "#3a3939", "outline-variant": "#3c494e", "on-tertiary": "#66002c", tertiary: "#ffd3dc", "inverse-primary": "#00677e", "on-background": "#e5e2e1", "on-surface": "#e5e2e1", "on-surface-variant": "#bbc9cf", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#d2bbff", "primary-fixed-dim": "#3cd7ff", "on-tertiary-container": "#a0004a", error: "#ffb4ab", "on-primary-fixed": "#001f27", "surface-dim": "#131313", "on-primary": "#003642", "on-secondary-fixed-variant": "#5a00c6", "on-secondary": "#3f008e", "on-secondary-fixed": "#25005a", "inverse-on-surface": "#313030", "on-primary-fixed-variant": "#004e5f", "inverse-surface": "#e5e2e1", "tertiary-container": "#ffabbf", "surface-container-lowest": "#0e0e0e", "on-tertiary-fixed-variant": "#8f0041", secondary: "#d2bbff", "surface-tint": "#3cd7ff", "primary-fixed": "#b4ebff", outline: "#859398", "on-primary-container": "#00586b", "surface-variant": "#353534", "tertiary-fixed": "#ffd9e0", "error-container": "#93000a", "on-secondary-container": "#c9aeff", "surface-container-low": "#1c1b1b", "surface-container-high": "#2a2a2a", "secondary-fixed": "#eaddff", "on-tertiary-fixed": "#3f0019", "primary-container": "#00d4ff", "tertiary-fixed-dim": "#ffb1c3", background: "#131313", "surface-container-highest": "#353534", "secondary-container": "#6001d1", primary: "#a8e8ff", "surface-container": "#201f1f", "on-error": "#690005", surface: "#131313"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {gutter: "24px", "margin-desktop": "64px", "section-gap": "120px", "margin-mobile": "20px", unit: "8px", "container-max": "1280px"}, fontFamily: {"display-lg": ["Space Grotesk"], "label-mono": ["JetBrains Mono"], "label-caps": ["Space Grotesk"], "body-md": ["Inter"], "display-xl": ["Space Grotesk"], "body-lg": ["Inter"], "headline-md": ["Space Grotesk"], "headline-md-mobile": ["Space Grotesk"], headline: ["Space Grotesk"], display: ["Space Grotesk"], body: ["Inter"], label: ["Anybody"]}, fontSize: {"display-lg": ["48px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700"}], "label-mono": ["14px", {lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "500"}], "label-caps": ["12px", {lineHeight: "1.2", letterSpacing: "0.1em", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "display-xl": ["80px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700"}], "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "600"}], "headline-md-mobile": ["24px", {lineHeight: "1.3", fontWeight: "600"}]}}}};</script>
+<style>
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        * { scroll-behavior: smooth; cursor: none !important; }
+        body { background-color: #131313; overflow-x: hidden; }
+        .glass { background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-glow:hover { box-shadow: 0 0 30px rgba(168, 232, 255, 0.3); }
+        .neon-text-glow { text-shadow: 0 0 10px rgba(168, 232, 255, 0.5); }
+        .custom-cursor { width: 20px; height: 20px; border: 2px solid #a8e8ff; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease; mix-blend-mode: difference; }
+        .custom-cursor.hovering { width: 40px; height: 40px; background: rgba(168, 232, 255, 0.15); }
+        .custom-cursor-dot { width: 4px; height: 4px; background: #a8e8ff; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.05s ease; }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #a8e8ff; animation: blink 1.5s infinite; }
+
+        .orbit { animation: orbit 20s linear infinite; }
+        @keyframes orbit { from { transform: rotate(0deg) translateX(150px) rotate(0deg); } to { transform: rotate(360deg) translateX(150px) rotate(-360deg); } }
+
+        .shimmer { position: relative; overflow: hidden; }
+        .shimmer::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg); transition: 0.5s; }
+        .shimmer:hover::after { left: 100%; top: 100%; }
+
+        /* ===================== */
+        /* REVEAL ANIMATIONS     */
+        /* ===================== */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.75s cubic-bezier(0.2, 1, 0.3, 1), transform 0.75s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.75s cubic-bezier(0.2, 1, 0.3, 1), transform 0.75s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.75s cubic-bezier(0.2, 1, 0.3, 1), transform 0.75s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-right.active { opacity: 1; transform: translateX(0); }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.88);
+            transition: opacity 0.75s cubic-bezier(0.2, 1, 0.3, 1), transform 0.75s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal-scale.active { opacity: 1; transform: scale(1); }
+
+        .typewriter-cursor { border-right: 2px solid #a8e8ff; animation: blink 0.7s infinite; }
+
+        /* ===================== */
+        /* PAGE LOAD CINEMATIC   */
+        /* ===================== */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 10px rgba(168,232,255,0.5), 0 0 20px rgba(168,232,255,0.2); }
+            50%       { text-shadow: 0 0 25px rgba(168,232,255,0.9), 0 0 50px rgba(168,232,255,0.4), 0 0 80px rgba(168,232,255,0.2); }
+        }
+        @keyframes bounceY {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-8px); }
+        }
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        /* Navbar load */
+        nav { animation: fadeInDown 0.6s cubic-bezier(0.2,1,0.3,1) both; }
+
+        /* Hero load sequence */
+        #hero-available-badge { opacity: 0; animation: fadeInUp 0.6s 0.2s cubic-bezier(0.2,1,0.3,1) forwards; }
+        #hero-name            { opacity: 0; animation: fadeInUp 0.7s 0.4s cubic-bezier(0.2,1,0.3,1) forwards; }
+        #hero-typewriter-wrap { opacity: 0; animation: fadeInUp 0.6s 0.65s cubic-bezier(0.2,1,0.3,1) forwards; }
+        #hero-desc            { opacity: 0; animation: fadeInUp 0.6s 0.85s cubic-bezier(0.2,1,0.3,1) forwards; }
+        #hero-cta             { opacity: 0; animation: scaleIn  0.6s 1.05s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        #hero-scroll-arrow    { opacity: 0; animation: fadeIn   0.6s 1.3s  ease forwards; }
+
+        /* Name glow pulse after load */
+        #hero-name { animation: fadeInUp 0.7s 0.4s cubic-bezier(0.2,1,0.3,1) forwards, glowPulse 3s 1.5s ease-in-out infinite; }
+
+        /* Orbit badges float */
+        .orbit-badge { animation: floatBadge 4s ease-in-out infinite; }
+        .orbit-badge:nth-child(3) { animation-delay: 0s; }
+        .orbit-badge:nth-child(4) { animation-delay: 1s; }
+        .orbit-badge:nth-child(5) { animation-delay: 2s; }
+        .orbit-badge:nth-child(6) { animation-delay: 0.5s; }
+
+        /* Scroll arrow bounce */
+        #hero-scroll-arrow span { animation: bounceY 1.5s ease-in-out infinite; display: inline-block; }
+
+        /* ===================== */
+        /* NAV LINK ACTIVE SLIDE */
+        /* ===================== */
+        nav a { position: relative; transition: color 0.3s ease; }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #a8e8ff;
+            box-shadow: 0 0 8px rgba(168,232,255,0.8);
+            transition: width 0.35s cubic-bezier(0.2,1,0.3,1);
+            border-radius: 2px;
+        }
+        nav a:hover::after,
+        nav a.nav-active::after { width: 100%; }
+        nav a.nav-active { color: #a8e8ff !important; }
+
+        /* ===================== */
+        /* SECTION TRANSITIONS   */
+        /* ===================== */
+        section {
+            transition: opacity 0.4s ease;
+        }
+        section.section-exit {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ===================== */
+        /* BUTTON HOVER GLOW     */
+        /* ===================== */
+        button, a[class*="magnetic"] {
+            transition: transform 0.3s cubic-bezier(0.2,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease !important;
+        }
+        .bg-primary:hover {
+            box-shadow: 0 0 25px rgba(168,232,255,0.5), 0 0 50px rgba(168,232,255,0.2) !important;
+        }
+
+        /* ===================== */
+        /* SKILL CARD HOVER      */
+        /* ===================== */
+        .skill-card-hover {
+            transition: transform 0.35s cubic-bezier(0.2,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .skill-card-hover:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(168,232,255,0.12), 0 0 0 1px rgba(168,232,255,0.2);
+        }
+
+        /* ===================== */
+        /* PROJECT CARD HOVER    */
+        /* ===================== */
+        .project-card-hover {
+            transition: transform 0.4s cubic-bezier(0.2,1,0.3,1), box-shadow 0.4s ease;
+        }
+        .project-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(168,232,255,0.1);
+        }
+
+        /* ===================== */
+        /* CERT CARD HOVER       */
+        /* ===================== */
+        .cert-card-hover {
+            transition: transform 0.35s cubic-bezier(0.2,1,0.3,1), box-shadow 0.35s ease;
+        }
+        .cert-card-hover:hover {
+            transform: translateY(-5px) scale(1.015);
+            box-shadow: 0 15px 50px rgba(168,232,255,0.15);
+        }
+
+        /* ===================== */
+        /* TIMELINE DOT PULSE    */
+        /* ===================== */
+        @keyframes ringPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(168,232,255,0.6); }
+            70%  { box-shadow: 0 0 0 10px rgba(168,232,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(168,232,255,0); }
+        }
+        .timeline-active-dot { animation: ringPulse 2s ease-out infinite; }
+
+        /* ===================== */
+        /* STAGGER HELPERS       */
+        /* ===================== */
+        .stagger-1 { transition-delay: 0ms !important; }
+        .stagger-2 { transition-delay: 80ms !important; }
+        .stagger-3 { transition-delay: 160ms !important; }
+        .stagger-4 { transition-delay: 240ms !important; }
+        .stagger-5 { transition-delay: 320ms !important; }
+        .stagger-6 { transition-delay: 400ms !important; }
+
+        /* ===================== */
+        /* CONTACT FORM FOCUS    */
+        /* ===================== */
+        input:focus, textarea:focus {
+            border-color: rgba(168,232,255,0.6) !important;
+            box-shadow: 0 0 15px rgba(168,232,255,0.15) !important;
+            outline: none !important;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* ===================== */
+        /* FOOTER BACK-TO-TOP    */
+        /* ===================== */
+        .back-to-top-btn {
+            transition: letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .back-to-top-btn:hover {
+            text-shadow: 0 0 15px rgba(168,232,255,0.8);
+        }
+
+        /* ===================== */
+        /* SHAKE ANIMATION       */
+        /* ===================== */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%       { transform: translateX(-6px); }
+            40%       { transform: translateX(6px); }
+            60%       { transform: translateX(-4px); }
+            80%       { transform: translateX(4px); }
+        }
+        .shake { animation: shake 0.4s ease; }
+</style>
+</head>
+<body class="text-on-surface font-body-md selection:bg-primary/30 selection:text-primary">
+
+<!-- Custom Cursor -->
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<div class="custom-cursor-dot hidden md:block" id="cursor-dot"></div>
+
+<!-- Particles Canvas -->
+<canvas class="fixed inset-0 pointer-events-none z-0" id="hero-canvas"></canvas>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-2">
+        <span class="font-display-lg text-headline-md text-primary drop-shadow-[0_0_10px_rgba(168,232,255,0.5)]">M·A</span>
+        <span class="status-dot ml-1"></span>
+    </div>
+    <div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest">
+        <a class="nav-active" href="#home">Home</a>
+        <a class="text-on-surface-variant hover:text-primary" href="#about">About</a>
+        <a class="text-on-surface-variant hover:text-primary" href="#skills">Skills</a>
+        <a class="text-on-surface-variant hover:text-primary" href="#projects">Projects</a>
+        <a class="text-on-surface-variant hover:text-primary" href="#contact">Contact</a>
+    </div>
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform active:scale-95 magnetic font-bold" style="text-shadow: rgba(0,0,0,0.5) 0px 1px 2px; font-size:16px!important; color:rgb(255,255,255)!important;">
+        HIRE AGENT
+    </button>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center px-gutter text-center pt-24 overflow-hidden" id="home">
+<div class="z-10 max-w-4xl">
+    <div id="hero-available-badge" class="inline-flex items-center gap-2 glass px-4 py-1.5 rounded-full mb-8 border-primary/20">
+        <span class="status-dot"></span>
+        <span class="font-label-mono text-label-caps text-primary uppercase font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Available for Collaboration</span>
+    </div>
+    <h1 id="hero-name" class="font-display-xl text-display-xl mb-6 neon-text-glow leading-none">
+        Mudassir Arif
+    </h1>
+    <div id="hero-typewriter-wrap" class="h-12 mb-8">
+        <p class="font-label-mono text-headline-md-mobile md:text-headline-md text-primary-container typewriter-cursor inline-block" id="typewriter">AI Systems Builder</p>
+    </div>
+    <p id="hero-desc" class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+        I build autonomous AI agents that think, act, and deliver high-impact results using state-of-the-art Generative AI frameworks and MCP architectures.
+    </p>
+    <div id="hero-cta" class="flex flex-col md:flex-row gap-6 justify-center items-center">
+        <a class="magnetic bg-primary text-on-primary font-label-caps text-label-caps px-10 py-4 rounded-full neon-glow transition-all duration-300 flex items-center gap-2 font-bold" href="#projects" style="text-shadow:rgba(0,0,0,0.5) 0px 1px 2px;font-size:16px!important;color:rgb(255,255,255)!important;">
+            VIEW PROJECTS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+        <a class="magnetic border border-white/20 glass hover:border-primary/50 font-label-caps text-label-caps px-10 py-4 rounded-full transition-all duration-300 flex items-center gap-2 font-bold" href="#" style="text-shadow:rgba(0,0,0,0.5) 0px 1px 2px;font-size:16px!important;color:rgb(255,255,255)!important;">
+            DOWNLOAD CV <span class="material-symbols-outlined text-sm">download</span>
+        </a>
+    </div>
+</div>
+
+<!-- Orbiting Badges -->
+<div class="absolute inset-0 pointer-events-none hidden lg:block">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full"></div>
+    <div class="orbit orbit-badge absolute top-[40%] left-[45%] glass p-3 rounded-xl border-primary/30 flex items-center gap-2" style="animation-delay:-2s;">
+        <span class="font-label-mono text-xs text-primary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Python</span>
+    </div>
+    <div class="orbit orbit-badge absolute top-[55%] left-[55%] glass p-3 rounded-xl border-secondary/30 flex items-center gap-2" style="animation-duration:25s;animation-delay:-5s;">
+        <span class="font-label-mono text-xs text-secondary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">LangChain</span>
+    </div>
+    <div class="orbit orbit-badge absolute top-[30%] left-[60%] glass p-3 rounded-xl border-tertiary/30 flex items-center gap-2" style="animation-duration:30s;animation-delay:-10s;">
+        <span class="font-label-mono text-xs text-tertiary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">MCP</span>
+    </div>
+    <div class="orbit orbit-badge absolute top-[65%] left-[40%] glass p-3 rounded-xl border-primary-fixed/30 flex items-center gap-2" style="animation-duration:18s;animation-delay:-15s;">
+        <span class="font-label-mono text-xs text-primary-fixed font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">RAG</span>
+    </div>
+</div>
+
+<!-- Scroll Arrow -->
+<div id="hero-scroll-arrow" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-on-surface-variant">
+    <span class="material-symbols-outlined text-primary" style="display:inline-block; animation: bounceY 1.5s ease-in-out infinite;">expand_more</span>
+</div>
+</section>
+
+<!-- About Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto" id="about">
+<div class="grid md:grid-cols-2 gap-16 items-start">
+    <div class="reveal-left">
+        <h2 class="font-display-lg text-display-lg mb-8 text-primary">Architecting Intelligence</h2>
+        <div class="space-y-6 text-on-surface-variant font-body-lg">
+            <p>My journey into the world of AI began with a fascination for data and its potential to solve complex problems. Today, I specialize in building agentic systems that don't just process information—they reason and execute tasks autonomously.</p>
+            <p>I bridge the gap between static machine learning models and dynamic AI employees, leveraging the Model Context Protocol (MCP) and multi-agent frameworks to create scalable business solutions.</p>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-6 reveal-right" style="transition-delay:200ms;">
+        <div class="glass p-8 rounded-2xl flex flex-col gap-2 tilt-card skill-card-hover stagger-1">
+            <span class="font-display-lg text-headline-md text-primary">2+</span>
+            <span class="font-label-mono text-on-surface-variant font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Projects Built</span>
+        </div>
+        <div class="glass p-8 rounded-2xl flex flex-col gap-2 tilt-card skill-card-hover stagger-2">
+            <span class="font-display-lg text-headline-md text-secondary">1+</span>
+            <span class="font-label-mono text-on-surface-variant font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Year Journey</span>
+        </div>
+        <div class="glass p-8 rounded-2xl flex flex-col gap-2 tilt-card skill-card-hover col-span-2 stagger-3">
+            <span class="font-display-lg text-headline-md text-tertiary">1</span>
+            <span class="font-label-mono text-on-surface-variant font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Anthropic Certification</span>
+        </div>
+    </div>
+</div>
+
+<!-- Timeline -->
+<div class="mt-24 reveal-up">
+    <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-12 tracking-widest uppercase text-center">Development Roadmap</h3>
+    <div class="relative">
+        <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="relative pt-12 group reveal-up stagger-1">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-surface-variant border border-white/20 transition-all duration-300 group-hover:border-primary group-hover:shadow-[0_0_12px_rgba(168,232,255,0.6)]"></div>
+                <div class="text-center group-hover:scale-105 transition-transform duration-300">
+                    <h4 class="font-label-mono text-primary mb-2">2023 Q3</h4>
+                    <p class="font-body-md text-sm text-on-surface-variant">Data Science Beginner</p>
+                </div>
+            </div>
+            <div class="relative pt-12 group reveal-up stagger-2">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-surface-variant border border-white/20 transition-all duration-300 group-hover:border-secondary group-hover:shadow-[0_0_12px_rgba(210,187,255,0.6)]"></div>
+                <div class="text-center group-hover:scale-105 transition-transform duration-300">
+                    <h4 class="font-label-mono text-secondary mb-2">2023 Q4</h4>
+                    <p class="font-body-md text-sm text-on-surface-variant">Python &amp; ML Mastery</p>
+                </div>
+            </div>
+            <div class="relative pt-12 group reveal-up stagger-3">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-surface-variant border border-white/20 transition-all duration-300 group-hover:border-tertiary group-hover:shadow-[0_0_12px_rgba(255,211,220,0.6)]"></div>
+                <div class="text-center group-hover:scale-105 transition-transform duration-300">
+                    <h4 class="font-label-mono text-tertiary mb-2">2024 Q1</h4>
+                    <p class="font-body-md text-sm text-on-surface-variant">Generative AI Exploration</p>
+                </div>
+            </div>
+            <div class="relative pt-12 group reveal-up stagger-4">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-primary/20 -translate-y-1 timeline-active-dot"></div>
+                <div class="text-center">
+                    <h4 class="font-label-mono text-primary font-bold mb-2">PRESENT</h4>
+                    <p class="font-body-md text-sm text-on-surface">Agentic AI &amp; MCP</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Tech Arsenal -->
+<section class="py-section-gap bg-surface-container-lowest" id="skills">
+<div class="px-gutter max-w-container-max mx-auto">
+    <h2 class="font-display-lg text-display-lg mb-16 text-center reveal-up">Tech Arsenal</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-3xl reveal-up border-primary/10 skill-card-hover stagger-1">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="material-symbols-outlined text-primary text-4xl">psychology</span>
+                <h3 class="font-headline-md text-primary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">AI &amp; Agents</h3>
+            </div>
+            <ul class="space-y-4 font-label-mono text-on-surface-variant">
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; LangChain &amp; LangGraph</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Model Context Protocol</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Groq &amp; OpenAI APIs</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Vector DBs (FAISS)</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; RAG Architecture</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Prompt Engineering</li>
+            </ul>
+        </div>
+        <div class="glass p-8 rounded-3xl reveal-up border-secondary/10 skill-card-hover stagger-2">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="material-symbols-outlined text-secondary text-4xl">terminal</span>
+                <h3 class="font-headline-md text-secondary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Programming</h3>
+            </div>
+            <ul class="space-y-4 font-label-mono text-on-surface-variant">
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Python (Advanced)</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; FastAPI &amp; REST</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Git &amp; CI/CD</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Linux / CLI</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; SQL / NoSQL</li>
+            </ul>
+        </div>
+        <div class="glass p-8 rounded-3xl reveal-up border-tertiary/10 skill-card-hover stagger-3">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="material-symbols-outlined text-tertiary text-4xl">analytics</span>
+                <h3 class="font-headline-md text-tertiary font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Data &amp; Web</h3>
+            </div>
+            <ul class="space-y-4 font-label-mono text-on-surface-variant">
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Pandas &amp; NumPy</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Data Visualization</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Modern HTML/CSS</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; JavaScript (ES6+)</li>
+                <li class="flex items-center gap-2 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">&gt; Tailwind CSS</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto" id="projects">
+
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 reveal-up">
+    <div>
+        <h2 class="font-display-lg text-display-lg mb-4">Selected Works</h2>
+        <p class="text-on-surface-variant max-w-xl">Deep-dives into the autonomous systems and intelligent architectures I've deployed.</p>
+    </div>
+    <div class="font-label-mono text-primary" id="project-counter">01 / 01</div>
+</div>
+
+<!-- Dynamic Tabs Bar -->
+<div class="reveal-up mb-10" style="transition-delay:100ms;">
+    <div class="relative overflow-x-auto">
+        <div class="flex gap-2 min-w-max pb-1" id="project-tabs-bar">
+            <!-- Tabs injected by JS -->
+        </div>
+        <!-- Sliding indicator line -->
+        <div class="absolute bottom-0 left-0 h-[2px] bg-primary rounded-full transition-all duration-400 ease-[cubic-bezier(0.2,1,0.3,1)]" id="tab-indicator" style="box-shadow:0 0 10px rgba(168,232,255,0.8);"></div>
+    </div>
+    <div class="w-full h-[1px] bg-white/10 mt-0"></div>
+</div>
+
+<!-- Project Content Panel -->
+<div id="project-content-panel" class="reveal-up" style="transition-delay:200ms; min-height: 420px;">
+    <!-- Content injected by JS -->
+</div>
+
+</section>
+
+<style>
+/* ===================== */
+/* PROJECT TABS STYLES   */
+/* ===================== */
+.proj-tab {
+    position: relative;
+    padding: 10px 24px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #bbc9cf;
+    background: transparent;
+    border: none;
+    cursor: none;
+    border-radius: 8px 8px 0 0;
+    transition: color 0.3s ease, background 0.3s ease;
+    white-space: nowrap;
+}
+.proj-tab:hover { color: #a8e8ff; background: rgba(168,232,255,0.05); }
+.proj-tab.tab-active { color: #a8e8ff; background: rgba(168,232,255,0.08); }
+
+/* Content fade transitions */
+.proj-content-enter {
+    animation: projFadeIn 0.35s cubic-bezier(0.2,1,0.3,1) forwards;
+}
+.proj-content-exit {
+    animation: projFadeOut 0.2s ease forwards;
+}
+@keyframes projFadeIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes projFadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Status badge colors */
+.badge-live        { background: rgba(0,255,136,0.12); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
+.badge-development { background: rgba(255,107,53,0.12); color: #ff6b35; border: 1px solid rgba(255,107,53,0.3); }
+.badge-soon        { background: rgba(168,232,255,0.08); color: #a8e8ff; border: 1px solid rgba(168,232,255,0.2); }
+
+/* Tech tag */
+.tech-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(168,232,255,0.07);
+    border: 1px solid rgba(168,232,255,0.2);
+    border-radius: 999px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #a8e8ff;
+    letter-spacing: 0.04em;
+}
+
+/* Feature list */
+.feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #bbc9cf;
+    font-family: 'Inter', sans-serif;
+}
+.feat-item::before {
+    content: '✓';
+    color: #00ff88;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+</style>
+
+<script>
+// =====================
+// PROJECTS DATA ARRAY
+// To add a new project: just push a new object here!
+// Tabs auto-generate from this array.
+// =====================
+const PROJECTS = [
+    {
+        id: 'jarvis',
+        name: 'J.A.R.V.I.S',
+        subtitle: 'Just A Rather Very Intelligent System',
+        status: 'live', // 'live' | 'development' | 'soon'
+        badge: 'AGENTIC SYSTEM',
+        description: 'A highly modular autonomous AI assistant with real-time web search, RAG vector memory, vision capabilities, task automation, and Text-to-Speech. Built with FastAPI backend, LangChain for AI orchestration, FAISS for long-term memory, and Groq for ultra-fast inference.',
+        features: [
+            'Real-time web search via Tavily API',
+            'RAG vector memory with FAISS + HuggingFace embeddings',
+            'Vision & camera analysis via Groq vision model',
+            'Text-to-Speech with Microsoft Edge TTS neural voices',
+            'Multi-API key failover system with auto-retry',
+            'Autonomous task execution & desktop app launcher'
+        ],
+        tech: ['Python', 'FastAPI', 'LangChain', 'FAISS', 'Groq', 'Tavily', 'Edge-TTS', 'RAG'],
+        github: '#',   // ← apna GitHub link yahan daalo
+        demo: '#',     // ← apna LinkedIn demo link yahan daalo
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxxba6vkpHbO6RydnxPDucbHNGNpAMHMtCVmYV0n3sP0r1pvNZYoPen2kJda-kD7Yl0J2mnvB35_vSEJTanb13XuicWimsLJj0moGMi8HEnA6daBFdVbvXDE5J28UkcPijPwzja8sDi_qdE3iWzFnDLq642N7BsDkQ7mMiB7dzNPHOaTk2479DVnEAayJrT3BMYoqdAU8F4Yu6TPcwLjS0AYY0lNT3gfr-pHrH7AJu00xa5N4MgLn75EP9l0GvB-9yGegjFpoeucw'
+    }
+    // ── Naya project add karna ho toh yahan push karo ──
+    // {
+    //   id: 'multi-agent',
+    //   name: 'Multi-Agent Research',
+    //   subtitle: 'Autonomous Research Pipeline',
+    //   status: 'development',
+    //   badge: 'MULTI-AGENT',
+    //   description: 'Multiple AI agents collaborate...',
+    //   features: ['CrewAI orchestration', 'LangGraph state management'],
+    //   tech: ['Python', 'CrewAI', 'LangGraph', 'Groq'],
+    //   github: '#',
+    //   demo: '#',
+    //   image: ''
+    // },
+];
+
+// =====================
+// TABS ENGINE
+// =====================
+let activeProjectIndex = 0;
+
+const statusLabels = { live: 'Live', development: 'In Development', soon: 'Coming Soon' };
+const statusBadgeClass = { live: 'badge-live', development: 'badge-development', soon: 'badge-soon' };
+
+function buildTabs() {
+    const bar = document.getElementById('project-tabs-bar');
+    const counter = document.getElementById('project-counter');
+    bar.innerHTML = '';
+
+    PROJECTS.forEach((proj, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'proj-tab' + (i === activeProjectIndex ? ' tab-active' : '');
+        btn.setAttribute('data-index', i);
+        btn.textContent = proj.name;
+        btn.addEventListener('click', () => switchTab(i));
+        bar.appendChild(btn);
+    });
+
+    counter.textContent =
+        String(activeProjectIndex + 1).padStart(2, '0') + ' / ' +
+        String(PROJECTS.length).padStart(2, '0');
+
+    updateIndicator();
+}
+
+function updateIndicator() {
+    const bar  = document.getElementById('project-tabs-bar');
+    const tabs = bar.querySelectorAll('.proj-tab');
+    const ind  = document.getElementById('tab-indicator');
+    if (!tabs[activeProjectIndex]) return;
+    const tab  = tabs[activeProjectIndex];
+    ind.style.left  = tab.offsetLeft + 'px';
+    ind.style.width = tab.offsetWidth + 'px';
+}
+
+function switchTab(index) {
+    if (index === activeProjectIndex) return;
+    const panel = document.getElementById('project-content-panel');
+
+    // Exit animation
+    panel.classList.add('proj-content-exit');
+    setTimeout(() => {
+        panel.classList.remove('proj-content-exit');
+        activeProjectIndex = index;
+        buildTabs();
+        renderProjectContent();
+        panel.classList.add('proj-content-enter');
+        setTimeout(() => panel.classList.remove('proj-content-enter'), 400);
+    }, 200);
+}
+
+function renderProjectContent() {
+    const proj  = PROJECTS[activeProjectIndex];
+    const panel = document.getElementById('project-content-panel');
+
+    const statusBadge = `<span class="font-label-caps text-[11px] px-3 py-1 rounded-full ${statusBadgeClass[proj.status]}">${statusLabels[proj.status].toUpperCase()}</span>`;
+    const typeBadge   = `<span class="bg-primary/10 text-primary font-label-caps text-[11px] px-3 py-1 rounded-full border border-primary/20">${proj.badge}</span>`;
+
+    const techHTML = proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+    const featHTML = proj.features.map(f => `<div class="feat-item">${f}</div>`).join('');
+
+    const githubBtn = proj.github && proj.github !== '#'
+        ? `<a href="${proj.github}" target="_blank" class="magnetic bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps flex items-center gap-2 font-bold" style="font-size:14px!important;color:#000!important;text-decoration:none;">GITHUB <span class="material-symbols-outlined text-sm">open_in_new</span></a>`
+        : `<button class="magnetic bg-primary/20 text-primary/50 px-8 py-3 rounded-full font-label-caps flex items-center gap-2 font-bold cursor-not-allowed" style="font-size:14px!important;" disabled>GITHUB</button>`;
+
+    const demoBtn = proj.demo && proj.demo !== '#'
+        ? `<a href="${proj.demo}" target="_blank" class="magnetic border border-white/20 glass px-8 py-3 rounded-full font-label-caps font-bold" style="font-size:14px!important;color:#fff!important;text-decoration:none;">WATCH DEMO</a>`
+        : `<button class="magnetic border border-white/10 glass px-8 py-3 rounded-full font-label-caps font-bold text-on-surface-variant/40 cursor-not-allowed" style="font-size:14px!important;" disabled>WATCH DEMO</button>`;
+
+    const imageSection = proj.image
+        ? `<div class="h-64 lg:h-full relative overflow-hidden">
+               <img alt="${proj.name}" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="${proj.image}">
+           </div>`
+        : `<div class="h-64 lg:h-full relative overflow-hidden flex items-center justify-center bg-surface-container">
+               <span class="material-symbols-outlined text-primary/20" style="font-size:80px;">code_blocks</span>
+           </div>`;
+
+    panel.innerHTML = `
+        <div class="relative group rounded-[2rem] overflow-hidden glass border-primary/20 tilt-card project-card-hover">
+            <div class="grid lg:grid-cols-2">
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="flex items-center flex-wrap gap-3 mb-6">
+                        ${typeBadge}
+                        ${statusBadge}
+                    </div>
+                    <h3 class="font-display-lg text-headline-md mb-2 neon-text-glow" style="font-size:32px!important;font-weight:700!important;color:#fff!important;">${proj.name}</h3>
+                    <p class="font-label-mono text-primary/70 mb-5" style="font-size:13px!important;">${proj.subtitle}</p>
+                    <p class="text-on-surface-variant font-body-lg mb-6" style="font-size:15px!important;">${proj.description}</p>
+                    <div class="space-y-2 mb-8">${featHTML}</div>
+                    <div class="flex flex-wrap gap-2 mb-8">${techHTML}</div>
+                    <div class="flex flex-wrap gap-4">
+                        ${githubBtn}
+                        ${demoBtn}
+                    </div>
+                </div>
+                ${imageSection}
+            </div>
+        </div>`;
+
+    // Re-apply tilt to new card
+    const card = panel.querySelector('.tilt-card');
+    if (card) {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const rotX = (e.clientY - rect.top  - rect.height/2) / 12;
+            const rotY = (rect.width/2 - (e.clientX - rect.left)) / 12;
+            card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+    }
+
+    // Re-apply magnetic to new buttons
+    panel.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            btn.style.transform = `translate(${(e.clientX - rect.left - rect.width/2)*0.3}px, ${(e.clientY - rect.top - rect.height/2)*0.3}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+        btn.addEventListener('mouseenter', () => cursor && cursor.classList.add('hovering'));
+        btn.addEventListener('mouseleave', () => cursor && cursor.classList.remove('hovering'));
+    });
+}
+
+// Recalculate indicator on resize
+window.addEventListener('resize', updateIndicator);
+
+// Init on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    buildTabs();
+    renderProjectContent();
+});
+// Also run immediately in case DOMContentLoaded already fired
+if (document.readyState !== 'loading') {
+    buildTabs();
+    renderProjectContent();
+}
+</script>
+
+<!-- Certifications -->
+<section class="py-section-gap bg-surface-container-low px-gutter" id="certifications">
+<div class="max-w-container-max mx-auto">
+    <h2 class="font-display-lg text-display-lg mb-16 text-center reveal-up">Validation</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="glass p-8 rounded-3xl shimmer reveal-left border-tertiary/20 cert-card-hover">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-tertiary text-3xl">verified</span>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-tertiary mb-1 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">MCP Certification</h3>
+                    <p class="font-label-mono text-on-surface-variant" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Anthropic | Model Context Protocol</p>
+                </div>
+            </div>
+        </div>
+        <div class="glass p-8 rounded-3xl shimmer reveal-right border-primary/20 cert-card-hover" style="transition-delay:200ms;">
+            <div class="flex items-center gap-6">
+                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-3xl">memory</span>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-primary mb-1 font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Hardware Engineer</h3>
+                    <p class="font-label-mono text-on-surface-variant" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Cisco Certified</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto" id="contact">
+<div class="grid md:grid-cols-2 gap-20">
+    <div class="reveal-left">
+        <h2 class="font-display-lg text-display-lg mb-8">Let's build the future together.</h2>
+        <p class="text-on-surface-variant font-body-lg mb-12">I'm currently looking for collaborative projects in the AI Agent space. If you have an idea that needs reasoning power, let's talk.</p>
+        <div class="space-y-6">
+            <div class="flex items-center gap-4 group">
+                <div class="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:text-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_rgba(168,232,255,0.3)]">
+                    <span class="material-symbols-outlined">mail</span>
+                </div>
+                <span class="font-label-mono">arifmudassirhussain@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+                <div class="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:text-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_rgba(168,232,255,0.3)]">
+                    <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <span class="font-label-mono">Karachi, Pakistan</span>
+            </div>
+        </div>
+        <div class="flex gap-4 mt-12">
+            <a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all magnetic" href="https://linkedin.com/in/mudassir-arif-8b2b1a3a2" target="_blank">
+                <span class="font-label-mono font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">In</span>
+            </a>
+            <a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all magnetic" href="#">
+                <span class="font-label-mono font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">X</span>
+            </a>
+            <a class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all magnetic" href="#">
+                <span class="font-label-mono font-bold" style="font-weight:700!important;font-size:15px!important;color:rgb(255,255,255)!important;text-shadow:rgba(255,255,255,0.3) 0px 0px 8px!important;">Gh</span>
+            </a>
+        </div>
+    </div>
+    <div class="reveal-right" style="transition-delay:200ms;">
+        <form class="glass p-10 rounded-[2rem] space-y-8 border-primary/10" id="contact-form">
+            <div class="space-y-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Full Name</label>
+                <input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 transition-colors py-4 px-0 placeholder:text-surface-bright" placeholder="John Doe" type="text">
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Email Address</label>
+                <input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 transition-colors py-4 px-0 placeholder:text-surface-bright" placeholder="john@example.com" type="email">
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Message</label>
+                <textarea class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 transition-colors py-4 px-0 placeholder:text-surface-bright resize-none" placeholder="Tell me about your AI agent needs..." rows="4"></textarea>
+            </div>
+            <button class="w-full bg-primary text-on-primary py-5 rounded-2xl font-label-caps text-label-caps hover:shadow-[0_0_30px_rgba(168,232,255,0.4)] transition-all duration-300 active:scale-95 magnetic font-bold" id="send-btn" style="text-shadow:rgba(0,0,0,0.5) 0px 1px 2px;font-size:16px!important;color:rgb(255,255,255)!important;" type="submit">
+                SEND MESSAGE
+            </button>
+        </form>
+    </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 border-t border-white/5 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="font-display-lg text-headline-md text-on-surface">M·A</div>
+    <div class="font-label-mono text-on-surface-variant text-center">© 2024 M.A AI Systems. Engineered for Intelligence.</div>
+    <button class="back-to-top-btn magnetic font-label-caps text-label-caps text-primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        BACK TO TOP ↑
+    </button>
+</div>
+</footer>
+
+<script>
+// =====================
+// CUSTOM CURSOR
+// =====================
+const cursor = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursor-dot');
+let cursorX = 0, cursorY = 0, dotX = 0, dotY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX; cursorY = e.clientY;
+    cursorDot.style.left = cursorX + 'px';
+    cursorDot.style.top  = cursorY + 'px';
+});
+
+// Smooth cursor follow
+function animateCursor() {
+    const dx = cursorX - parseFloat(cursor.style.left || 0);
+    const dy = cursorY - parseFloat(cursor.style.top  || 0);
+    cursor.style.left = (parseFloat(cursor.style.left || 0) + dx * 0.15) + 'px';
+    cursor.style.top  = (parseFloat(cursor.style.top  || 0) + dy * 0.15) + 'px';
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Cursor hover expand
+document.querySelectorAll('a, button, .tilt-card, input, textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+});
+
+// =====================
+// MAGNETIC EFFECT
+// =====================
+document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width  / 2;
+        const y = e.clientY - rect.top  - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px)';
+        btn.style.transition = 'transform 0.4s cubic-bezier(0.2,1,0.3,1)';
+    });
+});
+
+// =====================
+// TYPEWRITER
+// =====================
+const phrases = ["Agentic AI Developer","AI Systems Builder","Generative AI Engineer","MCP Specialist"];
+let phraseIndex = 0, charIndex = 0, isDeleting = false;
+const typewriterEl = document.getElementById('typewriter');
+
+function type() {
+    const current = phrases[phraseIndex];
+    typewriterEl.textContent = isDeleting
+        ? current.substring(0, charIndex - 1)
+        : current.substring(0, charIndex + 1);
+    isDeleting ? charIndex-- : charIndex++;
+    let speed = isDeleting ? 50 : 150;
+    if (!isDeleting && charIndex === current.length) { speed = 2000; isDeleting = true; }
+    else if (isDeleting && charIndex === 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; speed = 500; }
+    setTimeout(type, speed);
+}
+type();
+
+// =====================
+// 3D TILT
+// =====================
+document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left, y = e.clientY - rect.top;
+        const rotX = (y - rect.height / 2) / 10;
+        const rotY = (rect.width  / 2 - x) / 10;
+        card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+});
+
+// =====================
+// INTERSECTION OBSERVER — REVEAL
+// =====================
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// =====================
+// ACTIVE NAV ON SCROLL
+// =====================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                link.classList.remove('text-primary');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('nav-active', 'text-primary');
+                    link.classList.remove('text-on-surface-variant');
+                }
+            });
+        }
+    });
+}, { threshold: 0.4 });
+
+sections.forEach(s => navObserver.observe(s));
+
+// =====================
+// NAV CLICK SMOOTH TRANSITION
+// =====================
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (targetId === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        // Subtle fade out body
+        document.body.style.opacity = '0.92';
+        document.body.style.transition = 'opacity 0.2s ease';
+        setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+            document.body.style.opacity = '1';
+        }, 150);
+    });
+});
+
+// =====================
+// CONTACT FORM FEEDBACK
+// =====================
+const contactForm = document.getElementById('contact-form');
+const sendBtn = document.getElementById('send-btn');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        sendBtn.textContent = 'SENDING...';
+        sendBtn.disabled = true;
+        setTimeout(() => {
+            sendBtn.textContent = '✓ MESSAGE SENT!';
+            sendBtn.style.background = '#00ff88';
+            sendBtn.style.color = '#000';
+            setTimeout(() => {
+                sendBtn.textContent = 'SEND MESSAGE';
+                sendBtn.style.background = '';
+                sendBtn.style.color = '';
+                sendBtn.disabled = false;
+                contactForm.reset();
+            }, 3000);
+        }, 1500);
+    });
+}
+
+// =====================
+// PARTICLES
+// =====================
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); init(); });
+
+let particlesArray = [];
+let mouse = { x: null, y: null, radius: 150 };
+window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+
+class Particle {
+    constructor(x, y, dX, dY, size) {
+        this.x = x; this.y = y;
+        this.dX = dX; this.dY = dY;
+        this.size = size;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(168,232,255,0.25)';
+        ctx.fill();
+    }
+    update() {
+        if (this.x > canvas.width  || this.x < 0) this.dX = -this.dX;
+        if (this.y > canvas.height || this.y < 0) this.dY = -this.dY;
+        const dx = mouse.x - this.x, dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < mouse.radius) {
+            if (mouse.x < this.x && this.x < canvas.width  - this.size*10) this.x += 10;
+            if (mouse.x > this.x && this.x > this.size*10) this.x -= 10;
+            if (mouse.y < this.y && this.y < canvas.height - this.size*10) this.y += 10;
+            if (mouse.y > this.y && this.y > this.size*10) this.y -= 10;
+        }
+        this.x += this.dX; this.y += this.dY;
+        this.draw();
+    }
+}
+
+function init() {
+    particlesArray = [];
+    const n = (canvas.height * canvas.width) / 9000;
+    for (let i = 0; i < n; i++) {
+        const size = Math.random() * 2 + 1;
+        particlesArray.push(new Particle(
+            Math.random() * (canvas.width  - size*4) + size*2,
+            Math.random() * (canvas.height - size*4) + size*2,
+            (Math.random() - 0.5),
+            (Math.random() - 0.5),
+            size
+        ));
+    }
+}
+
+function connect() {
+    const maxDist = (canvas.width/7) * (canvas.height/7);
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a+1; b < particlesArray.length; b++) {
+            const dx = particlesArray[a].x - particlesArray[b].x;
+            const dy = particlesArray[a].y - particlesArray[b].y;
+            const dist = dx*dx + dy*dy;
+            if (dist < maxDist) {
+                ctx.strokeStyle = `rgba(168,232,255,${1 - dist/20000})`;
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(p => p.update());
+    connect();
+}
+
+init();
+animate();
+</script>
+</body></html>
